@@ -29,7 +29,7 @@ var word =
 
     // 4e transformation
     cell = row.insertCell();
-    cell.innerHTML = this.matchLength(word, '[eaiouy]') + 'v / ' + this.matchLength(word, '[^eaiouy0-9]') + 'c';
+    cell.innerHTML = this.matchLength(word, '[eaiouy]') + 'v / ' + this.matchLength(word, '[^eaiouy0-9 ]') + 'c';
 
     // 5e transformation
     cell = row.insertCell();
