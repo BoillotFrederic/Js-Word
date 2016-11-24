@@ -8,6 +8,19 @@
   </head>
   <body>
     <a href="javascript:word.add();">Ajouter un mot</a>
-    <table></table>
+    <table>
+      <thead>
+        <tr>
+          <td>Mot</td>
+          <td>Minuscule</td>
+          <td>Majuscule</td>
+          <td>Voyelle/Consonne</td>
+          <td>Inversé</td>
+          <td>Palindrome</td>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
   </body>
 </html>

@@ -5,11 +5,11 @@ var word =
   {
     // Mot de l'utilisateur
     var word = prompt('Entrez un mot !');
-    while(word.match(/^[0-9]+$/i) || word.trim() == '')
+    while(!isNaN(word) || word.trim() == '')
     word = prompt('La chaine ne doit pas être vide ou composé que de chiffre numérique !');
 
     // Le tableau HTML
-    var tab = document.getElementsByTagName('table')[0];
+    var tab = document.getElementsByTagName('table')[0].children[1];
     var row = tab.insertRow();
     var cell;
 
@@ -37,7 +37,7 @@ var word =
 
     // 6e transformation
     cell = row.insertCell();
-    cell.innerHTML = (this.inverse(word).toLowerCase() == word.toLowerCase()) ? 'Est un palin' : 'Pas un palin';
+    cell.innerHTML = (this.inverse(word).toLowerCase() == word.toLowerCase()) ? 'Oui' : 'Non';
   },
 
   // Voyelle/consonne

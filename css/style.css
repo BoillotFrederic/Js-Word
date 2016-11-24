@@ -2,6 +2,10 @@ body
 {
   text-align:center;
 }
+thead
+{
+  font-weight:bold; 
+}
 a
 {
   display:inline-block;
