@@ -27,7 +27,7 @@ var word =
 
     // 4e transformation
     cell = row.insertCell();
-    cell.innerHTML = word.match(/[eaiouy]/gi).length + 'v /' + word.match(/[^eaiouy]/gi).length + 'c';
+    cell.innerHTML = this.matchLength(word, '[eaiouy]') + 'v / ' + this.matchLength(word, '[^eaiouy]') + 'c';
 
     // 5e transformation
     cell = row.insertCell();
@@ -36,6 +36,18 @@ var word =
     // 6e transformation
     cell = row.insertCell();
     cell.innerHTML = (this.inverse(word).toLowerCase() == word.toLowerCase()) ? 'Est un palin' : 'Pas un palin';
+  },
+
+  // Voyelle/consonne
+  matchLength: function(word, exp)
+  {
+    var str;
+    var exp = new RegExp(exp, 'gi');
+
+    try { str = word.match(exp).length; }
+    catch (e) { str = 0; }
+
+    return str;
   },
 
   // Inverser le mot
