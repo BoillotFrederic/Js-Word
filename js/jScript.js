@@ -50,9 +50,6 @@ var word =
   // Inverser le mot
   inverse: function(word)
   {
-    for (var wordInverse = '', i = (word.length  - 1); i >= 0; i--)
-    wordInverse += word[i];
-
-    return wordInverse;
+    return word.split('').reverse().join('');
   }
 }
