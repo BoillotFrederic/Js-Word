@@ -5,6 +5,8 @@ var word =
   {
     // Mot de l'utilisateur
     var word = prompt('Entrez un mot !');
+    while(word.match(/^[0-9]+$/i) || word.trim() == '')
+    word = prompt('La chaine ne doit pas être vide ou composé que de chiffre numérique !');
 
     // Le tableau HTML
     var tab = document.getElementsByTagName('table')[0];
@@ -27,7 +29,7 @@ var word =
 
     // 4e transformation
     cell = row.insertCell();
-    cell.innerHTML = this.matchLength(word, '[eaiouy]') + 'v / ' + this.matchLength(word, '[^eaiouy]') + 'c';
+    cell.innerHTML = this.matchLength(word, '[eaiouy]') + 'v / ' + this.matchLength(word, '[^eaiouy0-9]') + 'c';
 
     // 5e transformation
     cell = row.insertCell();
@@ -41,13 +43,8 @@ var word =
   // Voyelle/consonne
   matchLength: function(word, exp)
   {
-    var str;
     var exp = new RegExp(exp, 'gi');
-
-    try { str = word.match(exp).length; }
-    catch (e) { str = 0; }
-
-    return str;
+    return word.match(exp) ? word.match(exp).length : 0;
   },
 
   // Inverser le mot
