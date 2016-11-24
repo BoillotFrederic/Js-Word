@@ -27,7 +27,7 @@ var word =
 
     // 4e transformation
     cell = row.insertCell();
-    cell.innerHTML = word.match(/[eaiouy]/g).length + 'v /' + word.match(/[^eaiouy]/g).length + 'c';
+    cell.innerHTML = word.match(/[eaiouy]/gi).length + 'v /' + word.match(/[^eaiouy]/gi).length + 'c';
 
     // 5e transformation
     cell = row.insertCell();
@@ -38,7 +38,7 @@ var word =
     cell.innerHTML = (this.inverse(word).toLowerCase() == word.toLowerCase()) ? 'Est un palin' : 'Pas un palin';
   },
 
-  // Inverser un mot
+  // Inverser le mot
   inverse: function(word)
   {
     for (var wordInverse = '', i = (word.length  - 1); i >= 0; i--)
